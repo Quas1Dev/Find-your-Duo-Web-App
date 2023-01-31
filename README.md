@@ -2,14 +2,6 @@
 
 The evolved version of the Esports project on the Next Level Week by Rocketseat.
 
-The web client is deployed on Vercel here:
-
-https://nlw-esports-ignite.vercel.app/
-
-The server is deployed on Fly here:
-
-https://nlw-esports.fly.dev/games
-
 WORK IN PROGRESS: Internationalization (i18n), new screens, form validations, unit tests w/ Jest, e2e tests w/ Cypress, pipeline deploy w/ Github Actions.
 
 
