@@ -1,56 +1,60 @@
-import {MagnifyingGlassPlus, GameController} from "phosphor-react"
-import * as Dialog from "@radix-ui/react-dialog"
+import { MagnifyingGlassPlus, GameController } from "phosphor-react"
+import { Root, Portal, Trigger, Overlay, Close, Title, Content } from "@radix-ui/react-dialog"
 import './styles/main.css'
-import logo from  './assets/logo.svg'
-import gamesList from './data/images.js'
-import Game from './components/game.js'
-import Input from './components/Forms/input.js'
+import logo from './assets/logo.svg'
+import gamesList from './data/gameslist'
+import Game from './components/game'
+import Input from './components/Forms/input'
 
 function App() {
   let gamesComponents = gamesList.map((game) =>
-    <Game thumbnail={game.thumbnail} name={game.name} ads={game.ads}/>
+    <Game thumbnail={game.thumbnail} name={game.name} ads={game.ads} />
   )
 
   return (
     <div className="max-w-[1344px] mx-auto flex flex-col items-center m-20">
       {/* Site's logo */}
-      <img
-        src={logo}
-        alt="Site logo: the word eSports using a special font."
-        className="max-w-[500px]"
-      />
+      <div className="max-w-[500px]">
+        <img
+          src={logo}
+          alt="Site logo: the word eSports using a special font."
+          className="max-w-full h-auto"
+        />
+      </div>
 
-      {/* Main task */}
+      {/* Main title */}
       <h1 className="text-6xl text-white font-black mt-20">
         Seu <span className="bg-nlw-gradient text-transparent bg-clip-text">duo</span> está aqui!
       </h1>
 
       {/* List of game cards */}
-      <div className="grid grid-cols-6 gap-6 mt-16">
-        {gamesComponents}
-      </div>
-
-      {/* Create a modal *2 */}
-      <Dialog.Root>
-      {/* Footer */}
-      <div className="pt-1 bg-nlw-gradient self-stretch rounded-lg overflow-hidden mt-8">
-        <div className="bg-[#2A2634] px-8 py-6  flex justify-between items-center">
-          <div>
-            <strong className="text-2xl text-white font-black block">Não encontrou seu duo?</strong>
-            <span className="text-white block text-zinc-400">Publique um anúncio para encontrar novos players!</span>
-          </div>
-          <Dialog.Trigger className="py-2 px-4 bg-violet-500 text-white rounded hover:bg-violet-700 flex flex-item center gap-3">
-            <MagnifyingGlassPlus size={24}/>
-            Publicar anúncio
-          </Dialog.Trigger>
+      <div className="max-w-full overflow-scroll">
+        <div className="grid grid-cols-6 gap-6 mt-16 min-w-[996px]">
+          {gamesComponents}
         </div>
       </div>
 
-      <Dialog.Portal>
-        <Dialog.Overlay className="bg-black/60 inset-0 fixed" />
+      {/* Create a modal *2 */}
+      <Root>
+        {/* Footer */}
+        <div className="pt-1 bg-nlw-gradient self-stretch rounded-lg overflow-hidden mt-8">
+          <div className="bg-[#2A2634] px-8 py-6  flex justify-between items-center">
+            <div>
+              <strong className="text-2xl text-white font-black block">Não encontrou seu duo?</strong>
+              <span className="text-white block text-zinc-400">Publique um anúncio para encontrar novos players!</span>
+            </div>
+            <Trigger className="py-2 px-4 bg-violet-500 text-white rounded hover:bg-violet-700 flex flex-item center gap-3">
+              <MagnifyingGlassPlus size={24} />
+              Publicar anúncio
+            </Trigger>
+          </div>
+        </div>
 
-        <Dialog.Content className="fixed bg-[#2A2634] py-8 px-10 text-white top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-lg w-[480px] shadow-lg shadow-black/25">
-          <Dialog.Title className="text-3xl font-black">Publique um anúncio</Dialog.Title>
+        <Portal>
+          <Overlay className="bg-black/60 inset-0 fixed" />
+
+          <Content className="fixed bg-[#2A2634] py-8 px-10 text-white top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-lg w-[480px] shadow-lg shadow-black/25">
+            <Title className="text-3xl font-black">Publique um anúncio</Title>
 
             <form className="mt-8 flex flex-col gap-4">
               <div className="flex flex-col gap-2">
@@ -138,12 +142,12 @@ function App() {
               </div>
 
               <footer className="mt-4 flex justify-end gap-4">
-                <Dialog.Close
+                <Close
                   type="button"
                   className="bg-zinc-500 px-5 h-12 rounded-md font-semibold hover:bg-zinc-600"
                 >
                   Cancelar
-                </Dialog.Close>
+                </Close>
                 <button
                   type="submit"
                   className="bg-violet-500 px-5 h-12 rounded-md font-semibold flex items-center gap-3 hover:bg-violet-600"
@@ -153,18 +157,10 @@ function App() {
                 </button>
               </footer>
             </form>
-        </Dialog.Content>
-      </Dialog.Portal>
+          </Content>
+        </Portal>
 
-      </Dialog.Root>
-
-
-
-
-
-
-
-
+      </Root>
     </div>
   )
 }
@@ -197,6 +193,6 @@ w-3 produces font-size of 12px.
 */
 
 /*
-*2  - We place the Dialog.Root around the component that display the Button
-taht fires the modal.
+*2 - We place the Root around the component that display the Button
+that fires the modal and the modal.
 */
