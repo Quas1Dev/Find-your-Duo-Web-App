@@ -43,7 +43,7 @@ function App() {
               <strong className="text-2xl text-white font-black block">Não encontrou seu duo?</strong>
               <span className="text-white block text-zinc-400">Publique um anúncio para encontrar novos players!</span>
             </div>
-            <Trigger className="py-2 px-4 bg-violet-500 text-white rounded hover:bg-violet-700 flex flex-item center gap-3">
+            <Trigger className="py-2 px-4 bg-violet-500 text-white rounded hover:bg-violet-700 flex items-center gap-3">
               <MagnifyingGlassPlus size={24} />
               Publicar anúncio
             </Trigger>
