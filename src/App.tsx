@@ -1,6 +1,5 @@
 import './styles/main.css'
 import logo from './assets/logo.svg'
-import gamesList from './data/gameslist'
 import Game from './components/game'
 import CreateAdBanner from './components/CreateAdBanner'
 import { useState, useEffect } from 'react';
