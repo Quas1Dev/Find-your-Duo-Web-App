@@ -25,7 +25,7 @@ function App() {
   }, [])
 
   let gamesComponents = games.map((game) =>
-    <Game thumbnail={game.thumb} name={game.title} ads={Number(game.num_ads)} />
+    <Game thumbnail={game.thumb} name={game.title} key={game.id} ads={Number(game.num_ads)} />
   )
 
   return (
