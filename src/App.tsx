@@ -45,7 +45,7 @@ function App() {
       </h1>
 
       {/* List of game cards */}
-      <div className="max-w-full overflow-x-scroll">
+      <div className="max-w-full overflow-x-auto">
         <div className="grid grid-cols-6 gap-6 mt-16 min-w-[996px]">
           {gamesComponents}
         </div>
