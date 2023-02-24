@@ -1,11 +1,12 @@
 import { Root, Portal, Trigger, Overlay, Close, Title, Content } from "@radix-ui/react-dialog"
 import { MagnifyingGlassPlus, GameController } from "phosphor-react"
 import Input from './Forms/input'
+import * as Dialog from "@radix-ui/react-dialog"
 
 export default function CreateAdBanner() {
     return (
         // {/* Create a modal *2 */ }
-        <Root>
+        <Dialog.Root>
             {/* Footer */}
             <div className="pt-1 bg-nlw-gradient self-stretch rounded-lg overflow-hidden mt-8">
                 <div className="bg-[#2A2634] px-8 py-6  flex justify-between items-center">
@@ -13,18 +14,18 @@ export default function CreateAdBanner() {
                         <strong className="text-2xl text-white font-black block">Não encontrou seu duo?</strong>
                         <span className="text-white block text-zinc-400">Publique um anúncio para encontrar novos players!</span>
                     </div>
-                    <Trigger className="py-2 px-4 bg-violet-500 text-white rounded hover:bg-violet-700 flex items-center gap-3">
+                    <Dialog.Trigger className="py-2 px-4 bg-violet-500 text-white rounded hover:bg-violet-700 flex items-center gap-3">
                         <MagnifyingGlassPlus size={24} />
                         Publicar anúncio
-                    </Trigger>
+                    </Dialog.Trigger>
                 </div>
             </div>
 
-            <Portal>
-                <Overlay className="bg-black/60 inset-0 fixed" />
+            <Dialog.Portal>
+                <Dialog.Overlay className="bg-black/60 inset-0 fixed" />
 
-                <Content className="fixed bg-[#2A2634] py-8 px-10 text-white top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-lg w-[480px] shadow-lg shadow-black/25">
-                    <Title className="text-3xl font-black">Publique um anúncio</Title>
+                <Dialog.Content className="fixed bg-[#2A2634] py-8 px-10 text-white top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-lg w-[480px] shadow-lg shadow-black/25">
+                    <Dialog.Title className="text-3xl font-black">Publique um anúncio</Dialog.Title>
 
                     <form className="mt-8 flex flex-col gap-4">
                         <div className="flex flex-col gap-2">
@@ -112,12 +113,12 @@ export default function CreateAdBanner() {
                         </div>
 
                         <footer className="mt-4 flex justify-end gap-4">
-                            <Close
+                            <Dialog.Close
                                 type="button"
                                 className="bg-zinc-500 px-5 h-12 rounded-md font-semibold hover:bg-zinc-600"
                             >
                                 Cancelar
-                            </Close>
+                            </Dialog.Close>
                             <button
                                 type="submit"
                                 className="bg-violet-500 px-5 h-12 rounded-md font-semibold flex items-center gap-3 hover:bg-violet-600"
@@ -127,9 +128,9 @@ export default function CreateAdBanner() {
                             </button>
                         </footer>
                     </form>
-                </Content>
-            </Portal>
+                </Dialog.Content>
+            </Dialog.Portal>
 
-        </Root >
+        </Dialog.Root >
     )
 }
