@@ -29,6 +29,7 @@ export default function CreateAdModal() {
                                     <Select.Viewport>
                                         <Select.Item>
                                             <Select.ItemText />
+                                            
                                             <Select.ItemIndicator />
                                         </Select.Item>
                                     </Select.Viewport>
