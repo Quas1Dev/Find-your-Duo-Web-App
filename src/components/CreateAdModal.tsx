@@ -1,6 +1,8 @@
 import * as Dialog from "@radix-ui/react-dialog";
 import * as Checkbox from "@radix-ui/react-checkbox";
+import * as Select from "@radix-ui/react-select";
 import { Check, GameController } from "phosphor-react";
+
 import Input from './Forms/input'
 
 export default function CreateAdModal() {
@@ -14,11 +16,26 @@ export default function CreateAdModal() {
                 <form className="mt-8 flex flex-col gap-4">
                     <div className="flex flex-col gap-2">
                         <label htmlFor="game" className="font-semibold">Qual o game?</label>
-                        <select
-                            id="game"
-                            className="bg-zinc-900 py-3 px-4 rounded text-sm placeholder:text-npm install @radix-ui/react-selectzinc-500">
-                            <option value="">Selecione o game que deseja jogar</option>
-                        </select>
+                        <Select.Root>
+                            <Select.Trigger>
+                                <Select.value />
+                                <Select.Icon />
+                            </Select.Trigger>
+
+                            <Select.Portal>
+                                <Select.Content>
+                                    <Select.ScrollUpButton />
+
+                                    <Select.Viewport>
+                                        <Select.Item>
+                                            <Select.ItemText />
+                                            <Select.ItemIndicator />
+                                        </Select.Item>
+                                    </Select.Viewport>
+
+                                </Select.Content>
+                            </Select.Portal>
+                        </Select.Root>
                     </div>
 
                     <div className="flex flex-col gap-2">
