@@ -14,7 +14,11 @@ export default function CreateAdModal() {
                 <form className="mt-8 flex flex-col gap-4">
                     <div className="flex flex-col gap-2">
                         <label htmlFor="game" className="font-semibold">Qual o game?</label>
-                        <Input id="game" placeholder="Selecione o game que deseja jogar" />
+                        <select
+                            id="game"
+                            className="bg-zinc-900 py-3 px-4 rounded text-sm placeholder:text-npm install @radix-ui/react-selectzinc-500">
+                            <option value="">Selecione o game que deseja jogar</option>
+                        </select>
                     </div>
 
                     <div className="flex flex-col gap-2">
@@ -94,7 +98,7 @@ export default function CreateAdModal() {
                     <div className="mt-2 flex gap-2 text-sm items-center">
                         <Checkbox.Root className="w-6 h-6 p-1 flex gap-2 text-sm rounded bg-zinc-900">
                             <Checkbox.Indicator>
-                                <Check className="w-4 h-4 text-emerald-400"/> 
+                                <Check className="w-4 h-4 text-emerald-400" />
                             </Checkbox.Indicator>
                         </Checkbox.Root>
                         Costumo me conectar ao chat de voz
